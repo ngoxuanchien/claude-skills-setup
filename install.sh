@@ -37,8 +37,8 @@ for m in "${marketplaces[@]}"; do run claude plugin marketplace add "$m"; done
 for p in "${plugins[@]}"; do run claude plugin install "$p"; done
 
 # Standalone skills (skills CLI)
-run npx -y skills add vercel-labs/skills --skill find-skills
-run npx -y skills add stablyai/orca --skill orchestration
+run npx -y skills add vercel-labs/skills --skill find-skills -g -y
+run npx -y skills add stablyai/orca --skill orchestration -g -y
 
 # open-code-review-delegate: clone + symlink
 ocr="$HOME/.local/share/open-code-review"
