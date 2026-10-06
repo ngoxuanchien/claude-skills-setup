@@ -1,27 +1,27 @@
 # claude-skills-setup
 
-Script cài lại toàn bộ plugin và skill Claude Code của tôi trên máy mới.
+Script to reinstall all my Claude Code plugins and skills on a new machine.
 
-## Cài đặt
+## Install
 
-Yêu cầu: đã cài [Claude Code](https://docs.claude.com/en/docs/claude-code) (`claude`), `git`, `node`/`npx`.
+Requirements: [Claude Code](https://docs.claude.com/en/docs/claude-code) (`claude`), `git`, `node`/`npx`.
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/ngoxuanchien/claude-skills-setup/main/install.sh)
 ```
 
-Hoặc clone về rồi chạy:
+Or clone and run:
 
 ```bash
 git clone https://github.com/ngoxuanchien/claude-skills-setup.git
 bash claude-skills-setup/install.sh
 ```
 
-Chạy lại nhiều lần không sao: bước nào lỗi (ví dụ đã cài rồi) chỉ in cảnh báo và đi tiếp.
+Safe to re-run: any step that fails (e.g. already installed) prints a warning and the script continues.
 
-## Script cài gì
+## What it installs
 
-**Marketplace + plugin** (qua `claude plugin`):
+**Marketplaces + plugins** (via `claude plugin`):
 
 | Plugin | Marketplace |
 |---|---|
@@ -33,15 +33,15 @@ Chạy lại nhiều lần không sao: bước nào lỗi (ví dụ đã cài r�
 | logo-design | `kaankiziltug/logo-design-skill` |
 | ponytail | `DietrichGebert/ponytail` |
 
-**Skill độc lập:**
+**Standalone skills:**
 
-- `find-skills` (`vercel-labs/skills`) và `orchestration` (`stablyai/orca`), cài global qua `npx skills`
-- `open-code-review-delegate`: clone `alibaba/open-code-review` về `~/.local/share/open-code-review` rồi symlink vào `~/.claude/skills/`
+- `find-skills` (`vercel-labs/skills`) and `orchestration` (`stablyai/orca`), installed globally via `npx skills`
+- `open-code-review-delegate`: clones `alibaba/open-code-review` into `~/.local/share/open-code-review` and symlinks the skill into `~/.claude/skills/`
 
-## Cần cài tay
+## Manual steps
 
-- **agent-reach**: xem https://github.com/Panniantong/Agent-Reach
-- **cua-driver**: skill đi kèm khi cài cua-driver (`~/.cua-driver/skills/cua-driver`)
-- **collab-canvas**: chép `~/.claude/skills/collab-canvas` và CLI trong `~/.local/bin/` từ máy cũ
+- **agent-reach**: see https://github.com/Panniantong/Agent-Reach
+- **cua-driver**: the skill ships with cua-driver (`~/.cua-driver/skills/cua-driver`)
+- **collab-canvas**: copy `~/.claude/skills/collab-canvas` and its CLI from `~/.local/bin/` on the old machine
 
-Sau khi cài xong, khởi động lại Claude Code để nạp plugin.
+Restart Claude Code after installing so the plugins are loaded.
