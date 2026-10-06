@@ -17,6 +17,17 @@ git clone https://github.com/ngoxuanchien/claude-skills-setup.git
 bash claude-skills-setup/install.sh
 ```
 
+### Project scope
+
+By default everything is installed at user level (`~/.claude`). To install only into the current project instead, run from the project root and pass `project`:
+
+```bash
+cd /path/to/your-project
+bash <(curl -fsSL https://raw.githubusercontent.com/ngoxuanchien/claude-skills-setup/main/install.sh) project
+```
+
+Plugins are then declared in `.claude/settings.json` and skills land in `.claude/skills/` (commit these so teammates get the same setup).
+
 Safe to re-run: any step that fails (e.g. already installed) prints a warning and the script continues.
 
 ## What it installs

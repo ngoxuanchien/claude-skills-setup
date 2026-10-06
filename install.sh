@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 # Install the Claude Code plugins/skills from this machine onto a new one.
 # Safe to re-run: steps that fail (already installed, etc.) are reported and skipped.
+# Usage: install.sh [user|project]   (default: user; project = current directory)
 set -u
+
+scope="${1:-user}"
+case "$scope" in
+  user)    skills_flag=-g;  skills_dir="$HOME/.claude/skills" ;;
+  project) skills_flag=;    skills_dir="$PWD/.claude/skills" ;;
+  *) echo "usage: $0 [user|project]" >&2; exit 1 ;;
+esac
 
 run() { echo "+ $*"; "$@" || echo "  ! failed: $*"; }
 
@@ -33,18 +41,22 @@ plugins=(
   ponytail@ponytail
 )
 
-for m in "${marketplaces[@]}"; do run claude plugin marketplace add "$m"; done
-for p in "${plugins[@]}"; do run claude plugin install "$p"; done
+for m in "${marketplaces[@]}"; do run claude plugin marketplace add --scope "$scope" "$m"; done
+for p in "${plugins[@]}"; do run claude plugin install --scope "$scope" "$p"; done
 
 # Standalone skills (skills CLI)
-run npx -y skills add vercel-labs/skills --skill find-skills -g -y
-run npx -y skills add stablyai/orca --skill orchestration -g -y
+run npx -y skills add vercel-labs/skills --skill find-skills $skills_flag -y
+run npx -y skills add stablyai/orca --skill orchestration $skills_flag -y
 
-# open-code-review-delegate: clone + symlink
+# open-code-review-delegate: clone, then symlink (user) or copy (project, so the repo stays portable)
 ocr="$HOME/.local/share/open-code-review"
 [ -d "$ocr" ] || run git clone https://github.com/alibaba/open-code-review.git "$ocr"
-mkdir -p "$HOME/.claude/skills"
-run ln -sfn "$ocr/skills/open-code-review-delegate" "$HOME/.claude/skills/open-code-review-delegate"
+mkdir -p "$skills_dir"
+if [ "$scope" = user ]; then
+  run ln -sfn "$ocr/skills/open-code-review-delegate" "$skills_dir/open-code-review-delegate"
+else
+  run cp -R "$ocr/skills/open-code-review-delegate" "$skills_dir/"
+fi
 
 cat <<'EOF'
 
