@@ -49,6 +49,10 @@ Safe to re-run: any step that fails (e.g. already installed) prints a warning an
 - `find-skills` (`vercel-labs/skills`) and `orchestration` (`stablyai/orca`), installed globally via `npx skills`
 - `open-code-review-delegate`: clones `alibaba/open-code-review` into `~/.local/share/open-code-review` and symlinks the skill into `~/.claude/skills/`
 
+**Coding guidelines:**
+
+- [Karpathy-style `CLAUDE.md`](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md), appended to `~/.claude/CLAUDE.md` (user) or `./CLAUDE.md` (project). Existing content is kept; skipped if already present.
+
 ## Manual steps
 
 - **agent-reach**: see https://github.com/Panniantong/Agent-Reach

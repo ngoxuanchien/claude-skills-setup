@@ -58,6 +58,20 @@ else
   run cp -R "$ocr/skills/open-code-review-delegate" "$skills_dir/"
 fi
 
+# Karpathy-style coding guidelines: append to CLAUDE.md (never overwrite), skip if already there
+claude_md="$HOME/.claude/CLAUDE.md"; [ "$scope" = project ] && claude_md="$PWD/CLAUDE.md"
+karpathy_url=https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md
+if grep -qs "reduce common LLM coding mistakes" "$claude_md"; then
+  echo "+ $claude_md already has Karpathy guidelines, skipping"
+elif guidelines=$(curl -fsSL "$karpathy_url"); then
+  mkdir -p "$(dirname "$claude_md")"
+  [ -s "$claude_md" ] && printf '\n\n' >> "$claude_md"
+  printf '%s\n' "$guidelines" >> "$claude_md"
+  echo "+ added Karpathy guidelines to $claude_md"
+else
+  echo "  ! failed: download $karpathy_url"
+fi
+
 cat <<'EOF'
 
 Done. Manual steps remaining:
