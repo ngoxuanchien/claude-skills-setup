@@ -74,7 +74,6 @@ The **Name** column is what you pass to `install.sh` to select it.
 | Name | What it does | Source |
 |---|---|---|
 | `find-skills` | Discover and install agent skills ("is there a skill for X?") | `vercel-labs/skills` via `npx skills` |
-| `orchestration` | Coordinate supervised Orca workers: task dispatch, DAGs, hand-offs across agents/worktrees | `stablyai/orca` via `npx skills` |
 | `open-code-review-delegate` | Code review where OCR picks files/rules and Claude does the review. Cloned to `~/.local/share/open-code-review`; symlinked (user) or copied (project) into `.claude/skills/` | `alibaba/open-code-review` |
 | `karpathy` | [Karpathy-style `CLAUDE.md` guidelines](https://github.com/multica-ai/andrej-karpathy-skills/blob/main/CLAUDE.md), appended to `~/.claude/CLAUDE.md` (user) or `./CLAUDE.md` (project). Existing content is kept; skipped if already present | `multica-ai/andrej-karpathy-skills` |
 

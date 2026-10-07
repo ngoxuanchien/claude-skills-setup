@@ -24,7 +24,7 @@ plugins=(
   "logo-design      logo-design@logo-design-skill            kaankiziltug/logo-design-skill"
   "ponytail         ponytail@ponytail                        DietrichGebert/ponytail"
 )
-extras="find-skills orchestration open-code-review-delegate karpathy"
+extras="find-skills open-code-review-delegate karpathy"
 
 all_names="$extras"
 for line in "${plugins[@]}"; do all_names="$all_names ${line%% *}"; done
@@ -58,7 +58,6 @@ done
 
 # Standalone skills (skills CLI)
 want find-skills   && run npx -y skills add vercel-labs/skills --skill find-skills $skills_flag -y
-want orchestration && run npx -y skills add stablyai/orca --skill orchestration $skills_flag -y
 
 # open-code-review-delegate: clone, then symlink (user) or copy (project, so the repo stays portable)
 if want open-code-review-delegate; then
