@@ -64,7 +64,6 @@ The **Name** column is what you pass to `install.sh` to select it.
 | `gopls-lsp` | Go language server (gopls) for code intelligence | `anthropics/claude-plugins-official` |
 | `ecc` | Everything Claude Code: large set of agents, skills, commands and hooks (language reviewers, build resolvers, TDD, planning, sessions…) | `affaan-m/ECC` |
 | `voltagent-qa-sec` | QA & security subagents: code/security/architecture review, pen-testing, debugging, test automation | `VoltAgent/awesome-claude-code-subagents` |
-| `claude-obsidian` | Build and maintain an Obsidian knowledge vault (ingest, query, lint, canvas) | `AgriciDaniel/claude-obsidian` |
 | `diagram-design` | Branded architecture/flow/sequence/ER/chart diagrams as HTML/SVG/PNG; imports drawio/excalidraw/mermaid | `cathrynlavery/diagram-design` |
 | `logo-design` | Logo design skill | `kaankiziltug/logo-design-skill` |
 | `ponytail` | "Lazy senior dev" mode: minimal code, reuse first, no speculative abstractions; plus audit/review commands | `DietrichGebert/ponytail` |

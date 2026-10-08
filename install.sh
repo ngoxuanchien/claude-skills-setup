@@ -19,7 +19,6 @@ plugins=(
   "gopls-lsp        gopls-lsp@claude-plugins-official        anthropics/claude-plugins-official"
   "ecc              ecc@ecc                                  https://github.com/affaan-m/ECC.git"
   "voltagent-qa-sec voltagent-qa-sec@voltagent-subagents     VoltAgent/awesome-claude-code-subagents"
-  "claude-obsidian  claude-obsidian@agricidaniel-claude-obsidian AgriciDaniel/claude-obsidian"
   "diagram-design   diagram-design@diagram-design            cathrynlavery/diagram-design"
   "logo-design      logo-design@logo-design-skill            kaankiziltug/logo-design-skill"
   "ponytail         ponytail@ponytail                        DietrichGebert/ponytail"
