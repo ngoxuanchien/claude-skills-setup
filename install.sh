@@ -22,6 +22,7 @@ plugins=(
   "diagram-design   diagram-design@diagram-design            cathrynlavery/diagram-design"
   "logo-design      logo-design@logo-design-skill            kaankiziltug/logo-design-skill"
   "ponytail         ponytail@ponytail                        DietrichGebert/ponytail"
+  "ui-ux-pro-max    ui-ux-pro-max@ui-ux-pro-max-skill        nextlevelbuilder/ui-ux-pro-max-skill"
 )
 extras="find-skills open-code-review-delegate karpathy"
 

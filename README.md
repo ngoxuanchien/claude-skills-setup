@@ -67,6 +67,7 @@ The **Name** column is what you pass to `install.sh` to select it.
 | `diagram-design` | Branded architecture/flow/sequence/ER/chart diagrams as HTML/SVG/PNG; imports drawio/excalidraw/mermaid | `cathrynlavery/diagram-design` |
 | `logo-design` | Logo design skill | `kaankiziltug/logo-design-skill` |
 | `ponytail` | "Lazy senior dev" mode: minimal code, reuse first, no speculative abstractions; plus audit/review commands | `DietrichGebert/ponytail` |
+| `ui-ux-pro-max` | UI/UX design intelligence: styles, color palettes, font pairings, UX guidelines, design systems, banners, slides | `nextlevelbuilder/ui-ux-pro-max-skill` |
 
 **Standalone skills and extras:**
 
